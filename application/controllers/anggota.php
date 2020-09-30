@@ -10,7 +10,7 @@ class Anggota extends CI_Controller {
                 
                 $this->load->view('template/header',$data);
                 $this->load->view('template/sidebar');
-                $this->load->view('v_anggota',$data);
+                $this->load->view('anggota/v_anggota',$data);
                 $this->load->view('template/footer');
         }
         
@@ -35,7 +35,7 @@ class Anggota extends CI_Controller {
                 }
                 else{
                         $this->session->set_flashdata("error","Gagal Menambahkan Data Anggota");
-                        redirect('anggota/mana');
+                        redirect('anggota');
                 }
 
                 
@@ -67,7 +67,7 @@ class Anggota extends CI_Controller {
 
                 $this->load->view('template/header',$data);
                 $this->load->view('template/sidebar');
-                $this->load->view('v_edit_ang',$data);
+                $this->load->view('anggota/v_edit_ang',$data);
                 $this->load->view('template/footer');
         }
 
@@ -99,7 +99,7 @@ class Anggota extends CI_Controller {
                 
                 $this->load->view('template/header',$data);
                 $this->load->view('template/sidebar');
-                $this->load->view('v_lapdataanggota',$data);
+                $this->load->view('anggota/v_lapdataanggota',$data);
                 $this->load->view('template/footer');
         }
 }

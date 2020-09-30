@@ -79,7 +79,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="<?php echo base_url();?>ebook">
         <i class="fas fa-file-alt"></i>
           <span>Data E-Book</span></a>
       </li>
@@ -90,12 +90,12 @@
         </a>
         <div id="kategori" class="collapse" aria-labelledby="headingkategori" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="utilities-color.html">Umum</a>
-            <a class="collapse-item" href="utilities-border.html">Pemasaran</a>
-            <a class="collapse-item" href="utilities-animation.html">Pariwisata</a>
-            <a class="collapse-item" href="utilities-animation.html">Peternakan</a>
-            <a class="collapse-item" href="utilities-animation.html">Vokasi</a>
-            <a class="collapse-item" href="utilities-animation.html">Inspirasi</a>
+            <a class="collapse-item" href="<?php echo base_url();?>ebook/eb_umum">Umum</a>
+            <a class="collapse-item" href="<?php echo base_url();?>ebook/eb_pemasaran">Pemasaran</a>
+            <a class="collapse-item" href="<?php echo base_url();?>ebook/eb_pariwisata">Pariwisata</a>
+            <a class="collapse-item" href="<?php echo base_url();?>ebook/eb_peternakan">Peternakan</a>
+            <a class="collapse-item" href="<?php echo base_url();?>ebook/eb_vokasi">Vokasi</a>
+            <a class="collapse-item" href="<?php echo base_url();?>ebook/eb_inspirasi">Inspirasi</a>
           </div>
         </div>
 
