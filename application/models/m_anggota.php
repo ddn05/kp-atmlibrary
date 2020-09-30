@@ -9,7 +9,7 @@ class M_anggota extends CI_Model{
         $this->db->insert($table, $data);
     }
 
-    public function hapus_data($where,$table){
+    public function hapus_anggota($where,$table){
         $this->db->where($where);
         $this->db->delete($table);
     }

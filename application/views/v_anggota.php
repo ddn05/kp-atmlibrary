@@ -7,6 +7,21 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
+  
+  <?php if($this->session->flashdata('success')) { ?>
+    <div class="alert alert-success" role="alert">
+        <button class="close" type="button" data-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>
+        <span style="text-align:left;"><?php echo $this->session->flashdata('success');?></span>
+    </div>
+  <?php } ?>
+
+  <?php if($this->session->flashdata('error')) { ?>
+    <div class="alert alert-danger" role="alert">  
+        <button class="close" type="button" data-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>
+        <span style="text-align:left;"><?php echo $this->session->flashdata('error');?></span>
+    </div>
+  <?php } ?>
+
   <!-- Button trigger modal -->
     <button class="btn btn-sm btn-primary" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     <i class="fas fa-plus mr-2"></i>Tambah Anggota
@@ -39,8 +54,9 @@
                 <td><?php echo $ang->kelas?></td>
                 <td><?php echo $ang->jurusan?></td>
                 <td>
-                <?php echo anchor('anggota/edit_anggota/'.$ang->nis,'<div class="btn btn-success btn-sm"><i class="fas fa-edit"></i></div>')?>
-                <button class="btn btn-sm btn-danger" type="button" class="btn btn-primary" data-toggle="modal" data-target="#hapusModal"><i class="fas fa-trash"></i></button>
+                <?php echo anchor('anggota/edit_anggota/'.$ang->nis,'<div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></div>')?>
+                <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapusdata(<?php echo $ang->nis;?>);"><i class="fas fa-trash"></i></a>
+                <!-- <?php echo anchor('anggota/hapus_anggota/'.$ang->nis,'<button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>'); ?> -->
                 </td>
             </tr>
         <?php }?>
@@ -125,10 +141,21 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
         <!-- <button type="button" class="btn btn-primary">Iya</button> -->
-        <?php echo anchor('anggota/hapus_anggota/'.$ang->nis,'<button type="button" class="btn btn-primary">Iya</button>'); ?>
+        <?php echo anchor('anggota/hapus_anggota/'.$ang->nis,'<button onclick="hapusdata()" type="button" class="btn btn-primary">Iya</button>'); ?>
       </div>
     </div>
   </div>
 </div>
 
 </div>
+
+<script type="text/javascript">
+    var url="<?php echo base_url();?>";
+    function hapusdata(nis){
+       var r=confirm("Apakah anda yakin akan menghapus data ini ?")
+        if (r==true)
+          window.location = url+"anggota/hapus_anggota/"+nis;
+        else
+          return false;
+        } 
+</script>

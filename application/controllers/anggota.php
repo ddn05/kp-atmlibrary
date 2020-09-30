@@ -29,8 +29,16 @@ class Anggota extends CI_Controller {
                         'jurusan' => $jurusan
                 );
 
-                $this->m_anggota->input_data($data,'tb_anggota');
-                redirect('anggota');
+                if($this->db->insert('tb_anggota',$data)){
+                        $this->session->set_flashdata("success","Berhasil Menambahkan Data Anggota");
+                        redirect('anggota');
+                }
+                else{
+                        $this->session->set_flashdata("error","Gagal Menambahkan Data Anggota");
+                        redirect('anggota/mana');
+                }
+
+                
 
                 // if($nama == '' && $nis == ''){
                 //         redirect('anggota');   
@@ -45,7 +53,8 @@ class Anggota extends CI_Controller {
                 $where = array(
                         'nis' => $nis
                 );
-                $this->m_anggota->hapus_data($where,'tb_anggota');
+
+                $this->m_anggota->hapus_anggota($where,'tb_anggota');
                 redirect('anggota');
         }
 

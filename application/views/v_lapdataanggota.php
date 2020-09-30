@@ -7,10 +7,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-  <!-- Button trigger modal -->
-    <button class="btn btn-sm btn-success" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    <i class="fas fa-print mr-2"></i>Cetak
-    </button>
+  <a href="<?php echo base_url();?>lap_anggota" class="btn btn-success btn-sm" target="_blank"><i class="fas fa-print mr-2"></i>Cetak</a>
   </div>
   <div class="card-body">
     <div class="table-responsive">
