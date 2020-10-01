@@ -37,16 +37,20 @@
       </div>
     </div>
 	<div class="container mt-4 text-center">
-  		<h3 class="display" id="daftarebook">DAFTAR EBOOK</h3>
+  		<h3 class="display" id="daftarebook">DAFTAR EBOOK</h3>	
 		<div class="row">
-			<div class="card m-2 mt-5" style="width: 8rem;">
-			<span class="badge badge-light mb-2">Pemasaran</span>
-				<img src="<?php echo base_url();?>uploads/img/22.jpg" class="card-img-top my-img-feature" alt="...">
 
-				<h6 class="card-title mt-1"><strong>Ketika Rambo menarik</strong></h6>
-				<small>Penulis : Jajan</small><br>
-				<div class="btn btn-primary btn-sm m-0">Baca Ebook</div>
+		<?php foreach($ebook as $book) { ?>
+			<div class="card m-2 mt-5" style="width: 8rem;">
+				<span class="badge badge-light mb-2"><?php echo $book->kategori?></span>
+				<img src="<?php echo base_url().'uploads/img/'.$book->cover;?>" class="card-img-top my-img-feature" alt="...">
+
+				<h6 class="card-title mt-1"><strong><?php echo $book->judul?></strong></h6>
+				<small>Penulis : <?php echo $book->penulis ?></small><br>
+				<?php echo anchor ('user/baca/'.$book->id,'<div class="btn btn-primary btn-sm m-0">Baca Ebook</div>')?>
 			</div>
+		<?php } ?>
+
 		</div>
 		</div>
     </div>
