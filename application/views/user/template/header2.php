@@ -48,22 +48,22 @@
             </div>
           </div>
         </div>
-        <!-- <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+        <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
             <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
               <i class="ni ni-collection d-lg-none"></i>
               <span class="nav-link-inner--text"><i class="fas fa-bookmark"></i> Kategori</span>
             </a>
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">Umum</a>
-              <a href="#" class="dropdown-item">Pemasaran</a>
-              <a href="#" class="dropdown-item">Pariwisata</a>
-              <a href="#" class="dropdown-item">Peternakan</a>
-              <a href="#" class="dropdown-item">Vokasi</a>
-              <a href="#" class="dropdown-item">Inspirasi</a>
+              <a href="<?php echo base_url()?>user/umum" class="dropdown-item">Umum</a>
+              <a href="<?php echo base_url()?>user/pemasaran" class="dropdown-item">Pemasaran</a>
+              <a href="<?php echo base_url()?>user/pariwisata" class="dropdown-item">Pariwisata</a>
+              <a href="<?php echo base_url()?>user/peternakan" class="dropdown-item">Peternakan</a>
+              <a href="<?php echo base_url()?>user/vokasi" class="dropdown-item">Vokasi</a>
+              <a href="<?php echo base_url()?>user/inspirasi" class="dropdown-item">Inspirasi</a>
             </div>
           </li>
-        </ul> -->
+        </ul>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
             <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Visit WEB Official">
@@ -98,13 +98,3 @@
     </div>
   </nav>
   <!-- End Navbar -->
-<div class="wrapper">
-    <div class="container">
-        <span class="badge badge-light mt-4"><?php echo $baca->kategori?></span>
-        <h3 class="mt-2"><strong><?php echo $baca->judul?></strong></h3>
-        <small class="">Penulis : <?php echo $baca->penulis?></small><hr>
-        <div class="embed-responsive embed-responsive-21by9">
-          <iframe class="embed-responsive" src="<?php echo base_url().'uploads/pdf/'.$baca->ebook?>"></iframe>
-        </div>
-    </div>
-</div>

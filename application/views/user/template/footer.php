@@ -1,4 +1,5 @@
-<br /><br />
+<br>
+<hr>
     <footer class="footer">
       <div class="container">
         <div class="row row-grid align-items-center mb-5">

@@ -26,7 +26,7 @@
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
     <div class="container">
-      <a class="navbar-brand mr-lg-5" href="../index.html">
+      <a class="navbar-brand mr-lg-5" href="<?php echo base_url()?>user">
         <img src="<?php echo base_url();?>assetsuser/img/atmlogo.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,12 +55,12 @@
               <span class="nav-link-inner--text"><i class="fas fa-bookmark"></i> Kategori</span>
             </a>
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">Umum</a>
-              <a href="#" class="dropdown-item">Pemasaran</a>
-              <a href="#" class="dropdown-item">Pariwisata</a>
-              <a href="#" class="dropdown-item">Peternakan</a>
-              <a href="#" class="dropdown-item">Vokasi</a>
-              <a href="#" class="dropdown-item">Inspirasi</a>
+              <a href="<?php echo base_url()?>user/umum" class="dropdown-item">Umum</a>
+              <a href="<?php echo base_url()?>user/pemasaran" class="dropdown-item">Pemasaran</a>
+              <a href="<?php echo base_url()?>user/pariwisata" class="dropdown-item">Pariwisata</a>
+              <a href="<?php echo base_url()?>user/peternakan" class="dropdown-item">Peternakan</a>
+              <a href="<?php echo base_url()?>user/vokasi" class="dropdown-item">Vokasi</a>
+              <a href="<?php echo base_url()?>user/inspirasi" class="dropdown-item">Inspirasi</a>
             </div>
           </li>
         </ul>
