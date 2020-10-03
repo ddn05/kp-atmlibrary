@@ -91,10 +91,18 @@
             </a>
           </li>
           <li class="nav-item d-none d-lg-block ml-lg-4">
+
+          <?php echo form_open('user/search')?>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cari Ebook" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit">Cari</button>
+          <div class="input-group">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cari Ebook" aria-label="Search" name="keyword">
+            <div class="input-group-append">
+              <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit">Cari</button>
+            </div>
+          </div>
           </form>
+          <?php echo form_close()?>
+
           </li>
         </ul>
       </div>

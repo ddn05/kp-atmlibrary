@@ -33,4 +33,13 @@ class M_user extends CI_Model{
     public function inspirasi(){
         return $this->db->get_where('tb_ebook', array('kategori' => 'inspirasi'));
     }
+
+    public function cari_data($keyword){
+        $this->db->select('*');
+        $this->db->from('tb_ebook');
+        $this->db->like('judul',$keyword);
+        $this->db->or_like('penulis',$keyword);
+
+        return $this->db->get()->result();
+    }
 }

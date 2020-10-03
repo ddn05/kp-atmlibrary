@@ -80,4 +80,15 @@ class User extends CI_Controller {
         $this->load->view('user/v_umum',$data);
         $this->load->view('user/template/footer');
     }
+
+    public function search(){
+        $data['title'] = 'ATM Library | Penelusuran';
+        $keyword = $this->input->post('keyword');
+        $data['cari'] = $this->m_user->cari_data($keyword);
+        $data['kunci'] = $keyword;
+
+        $this->load->view('user/template/header2',$data);
+        $this->load->view('user/v_hasil',$data);
+        $this->load->view('user/template/footer');
+    }
 }
