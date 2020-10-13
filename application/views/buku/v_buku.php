@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800 mb-4">Data Ebook</h1>
+<h1 class="h3 mb-2 text-gray-800 mb-4">Data Buku</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -24,40 +24,38 @@
 
   <!-- Button trigger modal -->
     <button class="btn btn-sm btn-primary" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      <i class="fas fa-plus mr-2"></i>Tambah Ebook
+      <i class="fas fa-plus mr-2"></i>Tambah Buku
     </button>
-    <a href="<?php echo base_url();?>lap_ebook" class="btn btn-success btn-sm ml-2" target="_blank"><i class="fas fa-print mr-2"></i>Cetak</a>
     </div>
   <div class="card-body">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>NO.</th>
+            <th>No.</th>
+            <th>Kode</th>
             <th>Judul</th>
             <th>Penulis</th>
-            <th>Kategori</th>
-            <th>Cover</th>
+            <th>Stok</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
         <?php
             $no=1;
-            foreach($ebook as $eb) {
+            foreach($buku as $buk) {
         ?>
             <tr>
                 <td><?php echo $no++?></td>
-                <td><?php echo $eb->judul?></td>
-                <td><?php echo $eb->penulis?></td>
-                <td><?php echo $eb->kategori?></td>
+                <td><?php echo $buk->kode?></td>
+                <td><?php echo $buk->judul?></td>
+                <td><?php echo $buk->penulis?></td>
+                <td><?php echo $buk->stok?></td>
                 <td>
-                    <img src="<?php echo base_url('uploads/img/'.$eb->cover);?>" width="100px" height="100px">
-                </td>
-                <td>
-                <?php echo anchor('ebook/edit_ebook/'.$eb->id,'<div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></div>')?>
-                <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapusdata(<?php echo $eb->id;?>);"><i class="fas fa-trash"></i></a>
-                <!-- <?php echo anchor('ebook/hapus_ebook/'.$eb->id,'<button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>'); ?> -->
+                <div class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Detail Data"><i class="fas fa-info-circle"></i></div>
+                <div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></div>
+                <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick=""><i class="fas fa-trash"></i></a>
+                
                 </td>
             </tr>
         <?php }?>
@@ -75,40 +73,37 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Ebook</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Buku</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <?php echo form_open_multipart('ebook/input_data');?>
+      <?php echo form_open_multipart('buku/input_data');?>
       <div class="form-group">
-            <label for="judul">Judul</label>
-            <input type="text" class="form-control" id="judul" placeholder="" name="judul">
+            <label for="kode">Kode Buku</label>
+            <input type="text" class="form-control" id="kode" placeholder="" name="kode">
+        </div>
+        <div class="form-group">
+            <label for="judul">Judul Buku</label>
+            <input type="text" class="form-control" id="judul" placeholder="" name="judul" require>
         </div>
         <div class="form-group">
             <label for="penulis">Penulis</label>
             <input type="text" class="form-control" id="penulis" placeholder="" name="penulis" require>
         </div>
         <div class="form-group">
-                <label for="kategori">Kategori</label>
-                <select id="kategori" class="form-control" name="kategori">
-                    <option>Umum</option>
-                    <option>Pemasaran</option>
-                    <option>Pariwisata</option>
-                    <option>Peternakan</option>
-                    <option>Vokasi</option>
-                    <option>Inspirasi</option>
-                </select>
+            <label for="penerbit">Penerbit</label>
+            <input type="text" class="form-control" id="penerbit" placeholder="" name="penerbit" require>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="penulis">Cover</label>
-                <input type="file" class="form-control" id="cover" placeholder="" name="cover" require>
+                <label for="tahun">Tahun</label>
+                <input type="number" class="form-control" id="tahun" placeholder="" name="tahun" require>
             </div>
             <div class="form-group col-md-6">
-                <label for="penulis">Ebook</label>
-                <input type="file" class="form-control" id="ebook" placeholder="" name="ebook" require>
+                <label for="penerbit">Stok</label>
+                <input type="number" class="form-control" id="stok" placeholder="" name="stok" require>
             </div>
           </div>
       </div>

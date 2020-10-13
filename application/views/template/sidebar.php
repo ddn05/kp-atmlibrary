@@ -37,7 +37,7 @@
         <div id="moduleMaster" class="collapse" aria-labelledby="moduleMaster" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>anggota"><i class="fas fa-users mr-2"></i>Anggota</a>
-            <a class="collapse-item" href="utilities-border.html"><i class="fas fa-book mr-3"></i>Buku</a>
+            <a class="collapse-item" href="<?php echo base_url();?>buku"><i class="fas fa-book mr-3"></i>Buku</a>
             <a class="collapse-item" href="utilities-animation.html"><i class="fas fa-user mr-3"></i>User</a>
           </div>
         </div>

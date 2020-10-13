@@ -5,7 +5,7 @@
 
 		<div class="row">
 
-		<?php foreach($umum as $book) { ?>
+		<?php foreach($kat as $book) { ?>
 			<div class="card m-2 mt-5" style="width: 8rem;">
 				<span class="badge badge-light mb-2"><?php echo $book->kategori?></span>
 				<img src="<?php echo base_url().'uploads/img/'.$book->cover;?>" class="card-img-top my-img-feature" alt="...">
