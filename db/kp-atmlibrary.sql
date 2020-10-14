@@ -54,20 +54,20 @@ insert  into `tb_anggota`(`nis`,`nama`,`jk`,`kelas`,`jurusan`) values
 DROP TABLE IF EXISTS `tb_buku`;
 
 CREATE TABLE `tb_buku` (
+  `id` int(30) NOT NULL AUTO_INCREMENT,
   `kode` varchar(10) NOT NULL,
   `judul` varchar(50) DEFAULT NULL,
   `penulis` varchar(50) DEFAULT NULL,
   `tahun` int(4) DEFAULT NULL,
   `penerbit` varchar(50) DEFAULT NULL,
   `stok` int(3) DEFAULT NULL,
-  PRIMARY KEY (`kode`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`,`kode`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_buku` */
 
-insert  into `tb_buku`(`kode`,`judul`,`penulis`,`tahun`,`penerbit`,`stok`) values 
-('A1212001','Seni Untuk Bersikap Bodo Amat','Sangkuriang',2020,'Jabar',32),
-('B12133','Ketika Rambo Menangis dan terpapar','Ahmad',2020,'Jabarin',2);
+insert  into `tb_buku`(`id`,`kode`,`judul`,`penulis`,`tahun`,`penerbit`,`stok`) values 
+(2,'B12133','Ketika Rambo Menangis dan terpapar','Ahmad',2023,'Jabarin',2);
 
 /*Table structure for table `tb_ebook` */
 
