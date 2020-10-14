@@ -36,6 +36,8 @@
             <th>Kode</th>
             <th>Judul</th>
             <th>Penulis</th>
+            <th>Penerbit</th>
+            <th>Tahun</th>
             <th>Stok</th>
             <th>Aksi</th>
           </tr>
@@ -50,12 +52,12 @@
                 <td><?php echo $buk->kode?></td>
                 <td><?php echo $buk->judul?></td>
                 <td><?php echo $buk->penulis?></td>
+                <td><?php echo $buk->penerbit?></td>
+                <td><?php echo $buk->tahun?></td>
                 <td><?php echo $buk->stok?></td>
                 <td>
-                <div class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Detail Data"><i class="fas fa-info-circle"></i></div>
-                <div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></div>
-                <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick=""><i class="fas fa-trash"></i></a>
-                
+                <?php echo anchor('buku/edit_buku/'.$buk->id,'<div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Ebook"><i class="fas fa-edit"></i></div>')?>
+                <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapusdata(<?php echo $buk->id;?>);"><i class="fas fa-trash"></i></a>
                 </td>
             </tr>
         <?php }?>
@@ -80,7 +82,7 @@
       </div>
       <div class="modal-body">
       <?php echo form_open_multipart('buku/input_data');?>
-      <div class="form-group">
+        <div class="form-group">
             <label for="kode">Kode Buku</label>
             <input type="text" class="form-control" id="kode" placeholder="" name="kode">
         </div>
@@ -105,7 +107,8 @@
                 <label for="penerbit">Stok</label>
                 <input type="number" class="form-control" id="stok" placeholder="" name="stok" require>
             </div>
-          </div>
+        </div>
+        
       </div>
       <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -122,7 +125,7 @@
     function hapusdata(id){
        var r=confirm("Apakah anda yakin akan menghapus data ini ?")
         if (r==true)
-          window.location = url+"ebook/hapus_ebook/"+id;
+          window.location = url+"buku/hapus_buku/"+id;
         else
           return false;
         } 
