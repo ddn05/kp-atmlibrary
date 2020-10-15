@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800 mb-4">Data Buku</h1>
+<h1 class="h3 mb-2 text-gray-800 mb-4">Data Petugas</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -24,40 +24,33 @@
 
   <!-- Button trigger modal -->
     <button class="btn btn-sm btn-primary" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      <i class="fas fa-plus mr-2"></i>Tambah Buku
+      <i class="fas fa-plus mr-2"></i>Tambah Petugas
     </button>
-    </div>
   <div class="card-body">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>No.</th>
-            <th>Kode</th>
-            <th>Judul</th>
-            <th>Penulis</th>
-            <th>Penerbit</th>
-            <th>Tahun</th>
-            <th>Stok</th>
+            <th>NO.</th>
+            <th>Nama</th>
+            <th>Username</th>
+            <th>Password</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
         <?php
             $no=1;
-            foreach($buku as $buk) {
+            foreach($petugas as $pet) {
         ?>
             <tr>
-                <td><?php echo $no++?></td>
-                <td><?php echo $buk->kode?></td>
-                <td><?php echo $buk->judul?></td>
-                <td><?php echo $buk->penulis?></td>
-                <td><?php echo $buk->penerbit?></td>
-                <td><?php echo $buk->tahun?></td>
-                <td><?php echo $buk->stok?></td>
+                <td><?php echo $no++ ?></td>
+                <td><?php echo $pet->nama ?></td>
+                <td><?php echo $pet->username ?></td>
+                <td><input type="password" class="form-control" id="password" placeholder=""  value="<?php echo $pet->password?>" name="password" readonly></td>
                 <td>
-                <?php echo anchor('buku/edit_buku/'.$buk->kode,'<div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Ebook"><i class="fas fa-edit"></i></div>')?>
-                <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapusdata(<?php echo $buk->kode;?>);"><i class="fas fa-trash"></i></a>
+                    <!-- <?php echo anchor('petugas/edit_petugas/'.$pet->id,'<div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></div>')?> -->
+                    <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapusdata(<?php echo $pet->id;?>);"><i class="fas fa-trash mr-2"></i>Hapus</a>
                 </td>
             </tr>
         <?php }?>
@@ -75,41 +68,26 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Buku</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Petugas</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <?php echo form_open_multipart('buku/input_data');?>
-        <div class="form-group">
-            <label for="kode">Kode Buku</label>
-            <input type="text" class="form-control" id="kode" placeholder="" name="kode">
+
+      <?php echo form_open_multipart('petugas/input_petugas');?>
+      <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control" id="nama" placeholder="" name="nama" require>
         </div>
         <div class="form-group">
-            <label for="judul">Judul Buku</label>
-            <input type="text" class="form-control" id="judul" placeholder="" name="judul" require>
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="" name="username" require>
         </div>
         <div class="form-group">
-            <label for="penulis">Penulis</label>
-            <input type="text" class="form-control" id="penulis" placeholder="" name="penulis" require>
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="" name="password" require>
         </div>
-        <div class="form-group">
-            <label for="penerbit">Penerbit</label>
-            <input type="text" class="form-control" id="penerbit" placeholder="" name="penerbit" require>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="tahun">Tahun</label>
-                <input type="number" class="form-control" id="tahun" placeholder="" name="tahun" require>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="penerbit">Stok</label>
-                <input type="number" class="form-control" id="stok" placeholder="" name="stok" require>
-            </div>
-        </div>
-        
-      </div>
       <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
               <button type="submit" class="btn btn-primary">Simpan</button>
@@ -122,10 +100,10 @@
 
 <script type="text/javascript">
     var url="<?php echo base_url();?>";
-    function hapusdata(kode){
+    function hapusdata(id){
        var r=confirm("Apakah anda yakin akan menghapus data ini ?")
         if (r==true)
-          window.location = url+"buku/hapus_buku/"+kode;
+          window.location = url+"petugas/hapus_petugas/"+id;
         else
           return false;
         } 

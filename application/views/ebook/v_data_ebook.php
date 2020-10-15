@@ -55,9 +55,9 @@
                     <img src="<?php echo base_url('uploads/img/'.$eb->cover);?>" width="100px" height="100px">
                 </td>
                 <td>
-                <?php echo anchor('ebook/edit_ebook/'.$eb->id,'<div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></div>')?>
-                <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapusdata(<?php echo $eb->id;?>);"><i class="fas fa-trash"></i></a>
-                <!-- <?php echo anchor('ebook/hapus_ebook/'.$eb->id,'<button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>'); ?> -->
+                  <?php echo anchor('ebook/edit_ebook/'.$eb->id,'<div class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fas fa-edit"></i></div>')?>
+                  <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapusdata(<?php echo $eb->id;?>);"><i class="fas fa-trash"></i></a>
+                  <!-- <?php echo anchor('ebook/hapus_ebook/'.$eb->id,'<button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus Data"><i class="fas fa-trash"></i></button>'); ?> -->
                 </td>
             </tr>
         <?php }?>

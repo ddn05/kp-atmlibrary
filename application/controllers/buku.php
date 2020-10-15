@@ -41,19 +41,19 @@ class Buku extends CI_Controller {
                 }
         }
 
-        public function hapus_buku($id){
+        public function hapus_buku($kode){
                 $where = array(
-                        'id' => $id
+                        'kode' => $kode
                 );
         
                 $this->m_buku->hapus_buku($where,'tb_buku');
                 redirect('buku');
         }
 
-        public function edit_buku($id){
+        public function edit_buku($kode){
                 $data['title'] = 'ATM Library | Edit Buku';
                 $where = array(
-                        'id' => $id
+                        'kode' => $kode
                 );
                 $data['buku'] = $this->m_buku->edit_buku($where,'tb_buku')->result();
         
@@ -64,7 +64,6 @@ class Buku extends CI_Controller {
         }
 
         public function update_buku(){
-                $id       = $this->input->post('id');
                 $kode     = $this->input->post('kode');
                 $judul    = $this->input->post('judul');
                 $penulis  = $this->input->post('penulis');
@@ -73,7 +72,6 @@ class Buku extends CI_Controller {
                 $stok     = $this->input->post('stok');
 
                 $data = array(
-                        'kode'          => $kode,
                         'judul'         => $judul,
                         'penulis'       => $penulis,
                         'tahun'         => $tahun,
@@ -82,7 +80,7 @@ class Buku extends CI_Controller {
                 );
 
                 $where = array(
-                        'id' => $id
+                        'kode' => $kode
                 );
 
                 $this->m_buku->update_buku($where,$data,'tb_buku');

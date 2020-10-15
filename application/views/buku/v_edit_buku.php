@@ -8,7 +8,6 @@
             
             <div class="form-group">
                 <label for="kode">Kode Buku</label>
-                <input type="hidden" class="form-control" id="id" placeholder="" name="id" value="<?php echo $buk->id?>">
                 <input type="text" class="form-control" id="kode" placeholder="" name="kode" value="<?php echo $buk->kode?>" readonly>
             </div>
             <div class="form-group">

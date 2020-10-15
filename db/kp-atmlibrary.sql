@@ -16,20 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`kp-atmlibrary` /*!40100 DEFAULT CHARACT
 
 USE `kp-atmlibrary`;
 
-/*Table structure for table `tb_admin` */
-
-DROP TABLE IF EXISTS `tb_admin`;
-
-CREATE TABLE `tb_admin` (
-  `id` int(30) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(30) DEFAULT NULL,
-  `username` varchar(30) DEFAULT NULL,
-  `password` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-/*Data for the table `tb_admin` */
-
 /*Table structure for table `tb_anggota` */
 
 DROP TABLE IF EXISTS `tb_anggota`;
@@ -54,20 +40,19 @@ insert  into `tb_anggota`(`nis`,`nama`,`jk`,`kelas`,`jurusan`) values
 DROP TABLE IF EXISTS `tb_buku`;
 
 CREATE TABLE `tb_buku` (
-  `id` int(30) NOT NULL AUTO_INCREMENT,
-  `kode` varchar(10) NOT NULL,
+  `kode` int(10) NOT NULL,
   `judul` varchar(50) DEFAULT NULL,
   `penulis` varchar(50) DEFAULT NULL,
   `tahun` int(4) DEFAULT NULL,
   `penerbit` varchar(50) DEFAULT NULL,
   `stok` int(3) DEFAULT NULL,
-  PRIMARY KEY (`id`,`kode`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`kode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_buku` */
 
-insert  into `tb_buku`(`id`,`kode`,`judul`,`penulis`,`tahun`,`penerbit`,`stok`) values 
-(2,'B12133','Ketika Rambo Menangis dan terpapar','Ahmad',2023,'Jabarin',2);
+insert  into `tb_buku`(`kode`,`judul`,`penulis`,`tahun`,`penerbit`,`stok`) values 
+(1920022,'Ketika Rambo Menangis dan terpapar ','Dadan',2020,'Jabarin',12);
 
 /*Table structure for table `tb_ebook` */
 
@@ -89,6 +74,23 @@ insert  into `tb_ebook`(`id`,`judul`,`penulis`,`kategori`,`cover`,`ebook`) value
 (3,'Ketika Rambo Menangis dan terpapar ','Ahmad','Peternakan','IMG_20200212_102904_366.jpg','Cetak_Rencana_Studi_-_Portal_Akademik_S51.pdf'),
 (4,'Ketika Rambo Dagang','Arip','Inspirasi','IMG_20200411_110429_735.jpg','Revolusi_Model_Bisnis_pada_Era_Industri_4_0_-_Investor_ID.pdf'),
 (5,'Pemrograman Java Script','Dadan','Umum','IMG_20200213_102840_316.jpg','Miftakhul_Ikhsan_-_Arin_dan_Mimpinya.pdf');
+
+/*Table structure for table `tb_petugas` */
+
+DROP TABLE IF EXISTS `tb_petugas`;
+
+CREATE TABLE `tb_petugas` (
+  `id` int(10) NOT NULL,
+  `nama` varchar(30) DEFAULT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tb_petugas` */
+
+insert  into `tb_petugas`(`id`,`nama`,`username`,`password`) values 
+(0,'Dadan','1177050026','admin123');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
