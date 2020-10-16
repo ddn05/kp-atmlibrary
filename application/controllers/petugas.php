@@ -16,7 +16,7 @@ class Petugas extends CI_Controller {
     public function input_petugas(){
         $nama       = $this->input->post('nama');
         $username   = $this->input->post('username');
-        $password   = $this->input->post('password');
+        $password   = md5($this->input->post('password'));
 
         $data = array(
             'nama' => $nama,
