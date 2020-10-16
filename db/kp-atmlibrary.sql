@@ -80,17 +80,18 @@ insert  into `tb_ebook`(`id`,`judul`,`penulis`,`kategori`,`cover`,`ebook`) value
 DROP TABLE IF EXISTS `tb_petugas`;
 
 CREATE TABLE `tb_petugas` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `nama` varchar(30) DEFAULT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(30) DEFAULT NULL,
+  `username` varchar(30) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_petugas` */
 
 insert  into `tb_petugas`(`id`,`nama`,`username`,`password`) values 
-(0,'Dadan','1177050026','admin123');
+(2,'Dadan Design','admin','0192023a7bbd73250516f069df18b500'),
+(7,'Mila','mila','f562f7f28a039094f7b602c033f106a4');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
