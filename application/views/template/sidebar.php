@@ -100,14 +100,14 @@
         </div>
 
         <!-- Divider -->
-      <hr class="sidebar-divider">
+      <!-- <hr class="sidebar-divider"> -->
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
         <i class="fas fa-sign-out-alt"></i>
           <span>Logout</span></a>
-      </li>
+      </li> -->
 
       </ul>
     <!-- End of Sidebar -->
@@ -168,29 +168,28 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, <strong><?php echo $this->session->userdata('nama')?></strong><i class="fas fa-sort-down ml-2"></i></span>
               </a>
               <!-- Dropdown - User Information -->
-              <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  <i class="fas fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Ganti Password
                 </a>
-                <a class="dropdown-item" href="#">
+                <!-- <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
-              </div> -->
+              </div>
             </li>
 
           </ul>
