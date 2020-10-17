@@ -21,8 +21,8 @@ class Auth extends CI_Controller {
                 'password' => md5($password)
             );
 
-            $data = $this->m_login->edit_data($where,'tb_petugas');
-            $d    = $this->m_login->edit_data($where,'tb_petugas')->row();
+            $data = $this->m_master->edit_data($where,'tb_petugas');
+            $d    = $this->m_master->edit_data($where,'tb_petugas')->row();
             $cek  = $data->num_rows();
             
             if($cek > 0){
