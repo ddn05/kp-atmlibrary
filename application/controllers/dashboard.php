@@ -2,12 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
-        function construct(){
-                parent::__construct();
-                if($this->session->userdata('status') != "login"){
-                        redirect('auth?pesan=belumlogin');
-                }
-        }
+        function __construct(){
+		parent::__construct();
+		// cek login
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url().'auth?pesan=belumlogin');
+		}
+	}
 	public function index()
 	{
         $data['title'] = 'ATM Library | Dashboard';
