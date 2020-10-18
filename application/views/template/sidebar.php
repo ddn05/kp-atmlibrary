@@ -50,7 +50,7 @@
         <div id="modulTransaksi" class="collapse" aria-labelledby="modulTransaksi" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>transaksi/add"><i class="fas fa-cart-plus mr-2"></i></i> Peminjaman</a>
-            <a class="collapse-item" href="utilities-border.html"><i class="fas fa-cart-arrow-down mr-2"></i>Pengembalian</a>
+            <a class="collapse-item" href="<?php echo base_url();?>transaksi/kembali"><i class="fas fa-cart-arrow-down mr-2"></i>Pengembalian</a>
           </div>
         </div>
       </li>

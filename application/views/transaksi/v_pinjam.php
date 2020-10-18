@@ -13,11 +13,11 @@
         }
     ?>
 
-        <form action="<?php echo base_url().'transaksi/add'?>" method="post">
+        <form action="<?php echo base_url().'transaksi/act'?>" method="post">
         
         <div class="form-group">
             <label>NIS Peminjam</label>
-            <select name="nis" id="" class="form-control">
+            <select name="nis_anggota" id="" class="form-control">
                 <option value="">- pilih NIS Siswa -</option>
                 <?php foreach($anggota as $ang){ ?>
                     <option value="<?php echo $ang->nis;?>"><?php echo $ang->nis;?></option>
@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
             <label>Kode Buku</label>
-            <select name="kode" id="" class="form-control">
+            <select name="kode_buku" id="" class="form-control">
                 <option value="">- pilih Kode buku -</option>
                 <?php foreach($buku as $buk){ ?>
                     <option value="<?php echo $buk->kode;?>"><?php echo $buk->kode;?></option>
@@ -35,17 +35,18 @@
         </div>
         <?php
             $date = date("Y-m-d");
+            
             $kembali = date("Y-m-d",strtotime($date.'+7 day'));
         ?>
         <div class="form-group">
             <label>Tanggal Pinjam</label>
-            <input type="date" class="form-control" id="ulang_pass" placeholder="" name="tgl_pijam" value="<?php echo $_POST['date'] = $date;?>" readonly>
+            <input type="date" class="form-control" id="ulang_pass" placeholder="" name="tgl_pinjam" value="<?php echo $date;?>" readonly>
             <?php echo form_error('tgl_pinjam')?>
         </div>
         <?php?>
         <div class="form-group">
             <label>Tanggal Kembali</label>
-            <input type="date" class="form-control" id="ulang_pass" placeholder="" name="tgl_kembali" value=<?php echo $_POST['kembali'] = $kembali?> readonly>
+            <input type="date" class="form-control" id="ulang_pass" placeholder="" name="tgl_kembali" value=<?php echo $kembali?> readonly>
             <?php echo form_error('tgl_kembali')?>
         </div>
         <div class="form-group">

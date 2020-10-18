@@ -16,8 +16,41 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
           </div>
 
+          <?php
+            
+            $kode_buku='1920022';
+
+
+            $this->db->where('kode', $kode_buku);
+            $this->db->select('stok');
+            $this->db->from('tb_buku');
+            $data = $this->db->get();
+
+            $stok = $data->row_array();
+
+            // print_r($stok['stok']);
+            // die;
+            echo $stok['stok'];
+            // print_r($stok);
+            // die();
+
+            // echo $stok;
+
+            // $this->db->select('stok');
+            // $this->db->from('tb_buku');
+            // $this->db->where('kode', $kode_buku);
+
+            // $stok = $this->db->get()->result();
+            
+            // print_r($stok);
+            // print_r($stok->result()); die;
+            // print_r($stok[0]->stok);
+            // echo $stok;
+          ?>
+
           <h6 class="mb-3">OFFLINE LIBRARY</h6>
           <!-- Content Row -->
+
           <div class="row">
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
