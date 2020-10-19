@@ -23,13 +23,12 @@
           <tr>
             <th>No.</th>
             <th>Tanggal Pinjam</th>
+            <th>NIS</th>
             <th>Anggota</th>
             <th>Judul Buku</th>
-            <th>Tanggal Kembali</th>
             <th>Tanggal Pengembalian</th>
             <th>Denda</th>
             <th>Status</th>
-            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -40,10 +39,9 @@
             <tr>
                 <td><?php echo $no++?></td>
                 <td><?php echo $tran->tgl_pinjam?></td>
+                <td><?php echo $tran->nis?></td>
                 <td><?php echo $tran->nama?></td>
                 <td><?php echo $tran->judul?></td>
-                <td><?php echo $tran->tgl_kembali?></td>
-                
                 <td>
                   <?php
                     if($tran->status == ""){
@@ -57,16 +55,6 @@
                 <td><?php echo "Rp. ".number_format($tran->total_denda).",-"?></td>
                 
                 <td><?php echo $tran->status?></td>
-                <td>
-                <?php if($tran->status == "") { ?>
-                <a href="<?php echo base_url().'transaksi/selesai/'.$tran->id_transaksi?>" class="btn btn-success btn-sm m-1" data-toggle="tooltip" data-placement="top" title="Transaksi Selesai"><i class="fas fa-check"></i></a>
-                      <a href="javascript:void(0);" class="btn btn-danger btn-sm m-1" data-toggle="tooltip" data-placement="top" title="Hapus Transaksi" onclick="hapusdata(<?php echo $tran->id_transaksi;?>);"><i class="fas fa-trash"></i></a>
-                </td>
-                <?php }
-                  else{
-                    echo "-";
-                  }
-                ?>
 
             </tr>
         <?php }?>

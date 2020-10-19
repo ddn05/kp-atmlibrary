@@ -16,12 +16,32 @@ class Transaksi extends CI_Controller {
     }
 
     public function kembali(){
-        $data['transaksi'] = $this->db->query("select * from tb_transaksi,tb_anggota,tb_buku where nis_anggota=nis and kode_buku=kode")->result();
+        $data['transaksi'] = $this->db->query("select * from tb_transaksi,tb_anggota,tb_buku where nis_anggota=nis and kode_buku=kode and status IS NULL")->result();
         $data['title']    = 'ATM_Library | Pengembalian';
 
         $this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('transaksi/v_kembali',$data);
+        $this->load->view('template/footer');
+    }
+
+    public function lappinjam(){
+        $data['transaksi'] = $this->db->query("select * from tb_transaksi,tb_anggota,tb_buku where nis_anggota=nis and kode_buku=kode and status IS NULL")->result();
+        $data['title']    = 'ATM_Library | Laporan Peminjaman';
+
+        $this->load->view('template/header',$data);
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/v_lappinjam',$data);
+        $this->load->view('template/footer');
+    }
+
+    public function lapkembali(){
+        $data['transaksi'] = $this->db->query("select * from tb_transaksi,tb_anggota,tb_buku where nis_anggota=nis and kode_buku=kode and status='selesai'")->result();
+        $data['title']    = 'ATM_Library | Laporan Transaksi';
+
+        $this->load->view('template/header',$data);
+        $this->load->view('template/sidebar');
+        $this->load->view('transaksi/v_lapkembali',$data);
         $this->load->view('template/footer');
     }
 

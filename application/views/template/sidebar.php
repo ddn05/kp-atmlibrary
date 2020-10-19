@@ -63,8 +63,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url()?>anggota/laporan_anggota"><i class="fas fa-users mr-2"></i>Data Anggota</a>
             <a class="collapse-item" href="<?php echo base_url()?>buku/laporan_buku"><i class="fas fa-book mr-3"></i>Data Buku</a>
-            <a class="collapse-item" href="utilities-animation.html"><i class="fas fa-cart-plus mr-3"></i></i>Data Peminjaman</a>
-            <a class="collapse-item" href="utilities-animation.html"><i class="fas fa-cart-arrow-down mr-3"></i></i>Data Pengembalian</a>
+            <a class="collapse-item" href="<?php echo base_url()?>transaksi/lappinjam"><i class="fas fa-cart-plus mr-3"></i></i>Data Peminjaman</a>
+            <a class="collapse-item" href="<?php echo base_url()?>transaksi/lapkembali"><i class="fas fa-cart-arrow-down mr-3"></i></i>Data Pengembalian</a>
           </div>
         </div>
       </li>
