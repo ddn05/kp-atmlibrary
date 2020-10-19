@@ -52,7 +52,8 @@ CREATE TABLE `tb_buku` (
 /*Data for the table `tb_buku` */
 
 insert  into `tb_buku`(`kode`,`judul`,`penulis`,`tahun`,`penerbit`,`stok`) values 
-(1920022,'Ketika Rambo Menangis dan terpapar ','Dadan',2020,'Jabarin',12);
+(1920022,'Ketika Rambo Menangis dan terpapar ','Dadan',2020,'Jabarin',100000),
+(19200112,'Pemrograman Java Script','Arip',2019,'Jembar',18);
 
 /*Table structure for table `tb_ebook` */
 
@@ -85,13 +86,47 @@ CREATE TABLE `tb_petugas` (
   `username` varchar(30) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_petugas` */
 
 insert  into `tb_petugas`(`id`,`nama`,`username`,`password`) values 
-(2,'Dadan Design','admin','0192023a7bbd73250516f069df18b500'),
-(7,'Mila','mila','f562f7f28a039094f7b602c033f106a4');
+(7,'Mila','mila','fd68e8922a6705a916b19669fb356cce'),
+(8,'Dadan Design','1177050026','0192023a7bbd73250516f069df18b500');
+
+/*Table structure for table `tb_transaksi` */
+
+DROP TABLE IF EXISTS `tb_transaksi`;
+
+CREATE TABLE `tb_transaksi` (
+  `id_transaksi` int(30) NOT NULL AUTO_INCREMENT,
+  `id_petugas` int(30) DEFAULT NULL,
+  `nis_anggota` int(30) DEFAULT NULL,
+  `kode_buku` int(30) DEFAULT NULL,
+  `tgl_pinjam` date DEFAULT NULL,
+  `tgl_kembali` date DEFAULT NULL,
+  `denda` int(11) DEFAULT NULL,
+  `total_denda` int(11) DEFAULT NULL,
+  `status` varchar(30) DEFAULT NULL,
+  `tgl_dikembalikan` date DEFAULT NULL,
+  PRIMARY KEY (`id_transaksi`),
+  KEY `id` (`id_petugas`),
+  KEY `nis` (`nis_anggota`),
+  KEY `kode` (`kode_buku`),
+  CONSTRAINT `tb_transaksi_ibfk_1` FOREIGN KEY (`nis_anggota`) REFERENCES `tb_anggota` (`nis`),
+  CONSTRAINT `tb_transaksi_ibfk_2` FOREIGN KEY (`kode_buku`) REFERENCES `tb_buku` (`kode`),
+  CONSTRAINT `tb_transaksi_ibfk_3` FOREIGN KEY (`id_petugas`) REFERENCES `tb_petugas` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tb_transaksi` */
+
+insert  into `tb_transaksi`(`id_transaksi`,`id_petugas`,`nis_anggota`,`kode_buku`,`tgl_pinjam`,`tgl_kembali`,`denda`,`total_denda`,`status`,`tgl_dikembalikan`) values 
+(95,8,12121,1920022,'2020-10-19','2020-10-26',500,0,'Selesai','2020-10-30'),
+(97,8,12121,19200112,'2020-10-19','2020-10-26',500,2000,'Selesai','2020-10-30'),
+(98,8,12121,1920022,'2020-10-19','2020-10-26',500,3000,'Selesai','2020-10-20'),
+(99,8,12121,1920022,'2020-10-19','2020-10-26',500,0,'Selesai','2020-10-20'),
+(100,8,1212,1920022,'2020-10-19','2020-10-26',200,200,'Selesai','2020-10-27'),
+(101,8,12121,1920022,'2020-10-19','2020-10-26',500,0,'Selesai','2020-10-19');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
