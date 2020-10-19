@@ -2,11 +2,21 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800 mb-4">Data Buku</h1>
+<h1 class="h3 mb-2 text-gray-800 mb-4">Data Peminjaman</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-body">
+  <?php
+        if(isset($_GET['pesan'])){
+            if($_GET['pesan'] == "berhasil"){
+                echo "<div class='alert alert-success'>Pengembalian Buku Berhasil.</div>";
+            }
+            if($_GET['pesan'] == "gagal"){
+                echo "<div class='alert alert-danger'>Pengembalian Buku Tidak Berhasil.</div>";
+            }
+        }
+    ?>
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
@@ -33,52 +43,19 @@
                 <td><?php echo $tran->nama?></td>
                 <td><?php echo $tran->judul?></td>
                 <td><?php echo $tran->tgl_kembali?></td>
-
+                <td><?php echo $tran->tgl_dikembalikan?></td>
+                <td><?php echo "Rp. ".number_format($tran->total_denda).",-"?></td>
+                <td><?php echo $tran->status?></td>
                 <td>
-                <?php
-                    if($tran->tgl_dikembalikan == ""){
-                        echo "-";
-                    }
-                    else{
-                        echo $tran->tgl_dikembalikan;
-                    }
-                ?>
+                <?php if($tran->status == "") { ?>
+                <a href="<?php echo base_url().'transaksi/selesai/'.$tran->id_transaksi?>" class="btn btn-success btn-sm m-1" data-toggle="tooltip" data-placement="top" title="Transaksi Selesai"><i class="fas fa-check"></i></a>
+                      <a href="javascript:void(0);" class="btn btn-danger btn-sm m-1" data-toggle="tooltip" data-placement="top" title="Hapus Transaksi" onclick="hapusdata(<?php echo $tran->id_transaksi;?>);"><i class="fas fa-trash"></i></a>
                 </td>
-
-                <td>
-                <?php
-                    if($tran->tgl_dikembalikan == ""){
-                        echo "-";
-                    }
-                    else{
-                        echo $tran->denda;
-                    }
+                <?php }
+                  else{
+                    echo "-";
+                  }
                 ?>
-                </td>
-
-                <td>
-                <?php
-                    if($tran->tgl_dikembalikan == ""){
-                        echo "-";
-                    }
-                    else{
-                        echo "Selesai";
-                    }
-                ?>
-                </td>
-
-                <td>
-                <?php
-                    if($tran->tgl_dikembalikan == ""){
-                        echo anchor('transaksi/selesai/'.$tran->id_transaksi,'<div class="btn btn-success btn-sm m-1" data-toggle="tooltip" data-placement="top" title="Transaksi Selesai"><i class="fas fa-check"></i></div>');?>
-                        <a href="javascript:void(0);" class="btn btn-danger btn-sm m-1" data-toggle="tooltip" data-placement="top" title="Hapus Transaksi" onclick="hapusdata(<?php echo $tran->id_transaksi;?>);"><i class="fas fa-trash"></i></a>
-                        <?php
-                    }
-                    else{
-                        echo "-";
-                    }
-                ?>
-                </td>
 
             </tr>
         <?php }?>

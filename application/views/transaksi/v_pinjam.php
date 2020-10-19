@@ -5,10 +5,10 @@
     <?php
         if(isset($_GET['pesan'])){
             if($_GET['pesan'] == "berhasil"){
-                echo "<div class='alert alert-success'>Password berhasil di ganti.</div>";
+                echo "<div class='alert alert-success'>Transaksi Sukses.</div>";
             }
             if($_GET['pesan'] == "gagal"){
-                echo "<div class='alert alert-danger'>Password gagal di ganti.</div>";
+                echo "<div class='alert alert-danger'>Transaksi Gagal.</div>";
             }
         }
     ?>
@@ -50,6 +50,10 @@
             <?php echo form_error('tgl_kembali')?>
         </div>
         <div class="form-group">
+            <label>Denda/hari</label>
+            <input type="number" class="form-control" id="ulang_pass" placeholder="" name="denda">
+        </div>
+        <!-- <div class="form-group">
             <label>Harga Denda/hari</label>
             <select name="denda" id="" class="form-control">
                 <option value="">500</option>
@@ -57,7 +61,7 @@
                 <option value="">1500</option>
                 <option value="">2000</option>
             </select>
-        </div>
+        </div> -->
 
             <button class="btn btn-primary btn-danger btn-sm mr-2" type="reset">Reset</button>
             <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
