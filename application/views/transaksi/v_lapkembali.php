@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800 mb-4"><strong>Data Peminjaman</strong></h1>
+<h1 class="h3 mb-2 text-gray-800 mb-4"><strong>Data Pengembalian</strong></h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -38,7 +38,7 @@
         ?>
             <tr>
                 <td><?php echo $no++?></td>
-                <td><?php echo $tran->tgl_pinjam?></td>
+                <td><?php echo date('d/m/Y',strtotime($tran->tgl_pinjam)); ?></td>
                 <td><?php echo $tran->nis?></td>
                 <td><?php echo $tran->nama?></td>
                 <td><?php echo $tran->judul?></td>
@@ -48,7 +48,7 @@
                       echo "-";
                     }
                     else{
-                      echo $tran->tgl_dikembalikan;
+                      echo date('d/m/Y',strtotime($tran->tgl_dikembalikan));
                     }
                   ?>
                 </td>

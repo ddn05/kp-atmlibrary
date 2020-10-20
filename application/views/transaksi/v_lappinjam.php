@@ -27,8 +27,8 @@
         ?>
             <tr>
                 <td><?php echo $no++?></td>
-                <td><?php echo $tran->tgl_pinjam?></td>
-                <td><?php echo $tran->tgl_kembali?></td>
+                <td><?php echo date('d/m/Y',strtotime($tran->tgl_pinjam)); ?></td>
+                <td><?php echo date('d/m/Y',strtotime($tran->tgl_kembali)); ?></td>
                 <td><?php echo $tran->nis?></td>
                 <td><?php echo $tran->nama?></td>
                 <td><?php echo $tran->judul?></td>

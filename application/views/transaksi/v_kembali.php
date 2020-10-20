@@ -25,7 +25,7 @@
             <th>Tanggal Pinjam</th>
             <th>Anggota</th>
             <th>Judul Buku</th>
-            <th>Tanggal Kembali</th>
+            <th>Max. Tanggal Kembali</th>
             <th>Tanggal Pengembalian</th>
             <th>Denda</th>
             <th>Status</th>
@@ -39,10 +39,10 @@
         ?>
             <tr>
                 <td><?php echo $no++?></td>
-                <td><?php echo $tran->tgl_pinjam?></td>
+                <td><?php echo date('d/m/Y',strtotime($tran->tgl_pinjam)); ?></td>
                 <td><?php echo $tran->nama?></td>
                 <td><?php echo $tran->judul?></td>
-                <td><?php echo $tran->tgl_kembali?></td>
+                <td><?php echo date('d/m/Y',strtotime($tran->tgl_kembali)); ?></td>
                 
                 <td>
                   <?php
