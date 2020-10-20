@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url();?>assetsuser/img/atmlogo.png">
+  <link rel="icon" type="image/png" href="<?php echo base_url();?>assetsuser/img/atmlogo.png">
 
   <title><?php echo $title; ?></title>
 

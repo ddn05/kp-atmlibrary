@@ -2,21 +2,27 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800 mb-4"><strong>Data Pengembalian</strong></h1>
+<h1 class="h3 mb-2 text-gray-800 mb-4"><strong>Laporan Data Pengembalian</strong></h1>
+
+<form action="<?php echo base_url().'transaksi/lapkembali'?>" method="post">
+  <div class="form-group col-md-6">
+    <label>Dari Tanggal</label>
+    <input type="date" class="form-control" id="dari" placeholder="" name="dari" value="<?php echo set_value('dari');?>">
+    <?php echo form_error('dari')?>
+  </div>
+  <div class="form-group col-md-6">
+    <label>Sampai Tanggal</label>
+    <input type="date" class="form-control" id="sampai" placeholder="" name="sampai" value="<?php echo set_value('sampai');?>">
+    <?php echo form_error('sampai')?>
+  </div>
+    <button class="btn btn-primary btn-sm ml-3" type="submit">Cari</button>
+</form>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-4">
+<div class="card shadow mb-4 mt-2">
   <div class="card-body">
-  <?php
-        if(isset($_GET['pesan'])){
-            if($_GET['pesan'] == "berhasil"){
-                echo "<div class='alert alert-success'>Pengembalian Buku Berhasil.</div>";
-            }
-            if($_GET['pesan'] == "gagal"){
-                echo "<div class='alert alert-danger'>Pengembalian Buku Tidak Berhasil.</div>";
-            }
-        }
-    ?>
+  <a href="<?php echo base_url();?>lap_anggota" class="btn btn-success btn-sm mb-2" target="_blank"><i class="fas fa-print mr-2"></i>Cetak</a>
+
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
