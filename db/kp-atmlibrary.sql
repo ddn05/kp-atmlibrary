@@ -1,6 +1,6 @@
 /*
 SQLyog Community v13.1.6 (64 bit)
-MySQL - 10.4.10-MariaDB : Database - kp-atmlibrary
+MySQL - 10.4.11-MariaDB : Database - kp-atmlibrary
 *********************************************************************
 */
 
@@ -32,8 +32,15 @@ CREATE TABLE `tb_anggota` (
 /*Data for the table `tb_anggota` */
 
 insert  into `tb_anggota`(`nis`,`nama`,`jk`,`kelas`,`jurusan`) values 
-(1212,'dadan','Laki-Laki','X','Pemasaran'),
-(12121,'Rizki','Laki-Laki','X','Pemasaran');
+(112,'Asep','Laki-Laki','X','Pemasaran'),
+(113,'Rizki','Laki-Laki','X','Pemasaran'),
+(114,'Angel','Laki-Laki','X','Pemasaran'),
+(211,'Restita','Perempuan','X','Pariwisata'),
+(212,'Andrian','Laki-Laki','X','Pariwisata'),
+(213,'Neni','Perempuan','X','Pariwisata'),
+(311,'Yeni','Perempuan','X','Peternakan'),
+(312,'Nenden','Perempuan','X','Peternakan'),
+(313,'Bangbang','Laki-Laki','X','Peternakan');
 
 /*Table structure for table `tb_buku` */
 
@@ -52,8 +59,9 @@ CREATE TABLE `tb_buku` (
 /*Data for the table `tb_buku` */
 
 insert  into `tb_buku`(`kode`,`judul`,`penulis`,`tahun`,`penerbit`,`stok`) values 
-(1920022,'Ketika Rambo Menangis dan terpapar ','Dadan',2020,'Jabarin',100000),
-(19200112,'Pemrograman Java Script','Arip',2019,'Jembar',18);
+(1111,'Pemrograman Java Script','Ahmad',2017,'Sinar Dunia',16),
+(1112,'Juragan Marketplace Reborn','Weliyan Tanoyo',2020,'Billionaire Store',10),
+(1113,'7 Kesalahan Fatal Pengusaha Pemula','Dewa Eka Prayoga',2018,'Billionaire Store',15);
 
 /*Table structure for table `tb_ebook` */
 
@@ -67,14 +75,14 @@ CREATE TABLE `tb_ebook` (
   `cover` text DEFAULT NULL,
   `ebook` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_ebook` */
 
 insert  into `tb_ebook`(`id`,`judul`,`penulis`,`kategori`,`cover`,`ebook`) values 
-(3,'Ketika Rambo Menangis dan terpapar ','Ahmad','Peternakan','IMG_20200212_102904_366.jpg','Cetak_Rencana_Studi_-_Portal_Akademik_S51.pdf'),
-(4,'Ketika Rambo Dagang','Arip','Inspirasi','IMG_20200411_110429_735.jpg','Revolusi_Model_Bisnis_pada_Era_Industri_4_0_-_Investor_ID.pdf'),
-(5,'Pemrograman Java Script','Dadan','Umum','IMG_20200213_102840_316.jpg','Miftakhul_Ikhsan_-_Arin_dan_Mimpinya.pdf');
+(6,'Belajar Codeigniter','Diki','Umum','Screenshot_2020-12-03_063138.jpg','EBOOK_TUTORIAL_CODEIGNITER_LENGKAP_DENGAN_STUDI_KASUS_MEMBUAT_SISTEM_INFORMASI_PERPUSTAKAAN.pdf'),
+(7,'Belajar HTML','Malas Ngoding','Umum','html_css_dasar.jpg','Belajar_HTML_Dasar_Pengertian_HTML_v2.pdf'),
+(8,'Pendidikan Agaman Islam Kelas 6 SD','Hasan','Umum','Screenshot_2020-12-03_064117.jpg','Agama_Islam_6_Kelas_6_Hasan_Mudis_Syafrudin_M_Adgani_dan_Lilis_Surya_2011.pdf');
 
 /*Table structure for table `tb_petugas` */
 
@@ -91,7 +99,6 @@ CREATE TABLE `tb_petugas` (
 /*Data for the table `tb_petugas` */
 
 insert  into `tb_petugas`(`id`,`nama`,`username`,`password`) values 
-(7,'Mila','mila','fd68e8922a6705a916b19669fb356cce'),
 (8,'Dadan Design','1177050026','0192023a7bbd73250516f069df18b500');
 
 /*Table structure for table `tb_transaksi` */
@@ -119,14 +126,6 @@ CREATE TABLE `tb_transaksi` (
 ) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_transaksi` */
-
-insert  into `tb_transaksi`(`id_transaksi`,`id_petugas`,`nis_anggota`,`kode_buku`,`tgl_pinjam`,`tgl_kembali`,`denda`,`total_denda`,`status`,`tgl_dikembalikan`) values 
-(95,8,12121,1920022,'2020-10-19','2020-10-26',500,0,'Selesai','2020-10-30'),
-(97,8,12121,19200112,'2020-10-19','2020-10-26',500,2000,'Selesai','2020-10-30'),
-(98,8,12121,1920022,'2020-10-19','2020-10-26',500,3000,'Selesai','2020-10-20'),
-(99,8,12121,1920022,'2020-10-19','2020-10-26',500,0,'Selesai','2020-10-20'),
-(100,8,1212,1920022,'2020-10-19','2020-10-26',200,200,'Selesai','2020-10-27'),
-(101,8,12121,1920022,'2020-10-19','2020-10-26',500,0,'Selesai','2020-10-19');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

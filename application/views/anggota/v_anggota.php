@@ -26,7 +26,7 @@
     <button class="btn btn-sm btn-primary" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     <i class="fas fa-plus mr-2"></i>Tambah Anggota
     </button>
-  </div>
+    </div>
   <div class="card-body">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
